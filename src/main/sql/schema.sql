@@ -9,7 +9,7 @@ create table red_packet(
 red_packet_id int(12) not null auto_increment comment '红包ID',
 user_id  int(12) not null comment '用户id',
 amount decimal(16,2) not null comment '红包金额',
-send_data timestamp not null comment '发送红包时间',
+send_date timestamp not null comment '发送红包时间',
 total int(12) not null comment '红包个数',
 unit_amount decimal(16,2) not null comment '单个红包金额',
 stock int(12) not null comment '剩余红包个数',

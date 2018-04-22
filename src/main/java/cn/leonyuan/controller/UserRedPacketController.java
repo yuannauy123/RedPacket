@@ -1,0 +1,36 @@
+package cn.leonyuan.controller;
+
+import cn.leonyuan.service.UserRedPacketService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+/**
+ * @program: RedPacket
+ * @description: 抢红包控制器
+ * @author: LeonYuan
+ * @create: 2018-04-20 15:44
+ **/
+@Controller
+
+public class UserRedPacketController {
+
+    @Autowired
+    private UserRedPacketService userRedPacketService=null;
+
+    @RequestMapping("/hh")
+    public String red(){
+        return "index.jsp";
+    }
+    @RequestMapping("/test")
+    public void grabRedPacket(){
+
+        userRedPacketService.updateUserRedPacket(1l,1l);
+
+    }
+
+}

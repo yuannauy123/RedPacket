@@ -969,14 +969,10 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="239" name="send_data">
+    <column id="244" parent="239" name="send_date">
       <Position>4</Position>
-      <Comment>发送红包时间</Comment>
       <DataType>timestamp|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
-      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
     </column>
     <column id="245" parent="239" name="total">
       <Position>5</Position>
