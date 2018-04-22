@@ -4,11 +4,26 @@
 
     <!-- 查询红包信息 -->
     <select id="getRedPacket" resultType="cn.leonyuan.pojo.RedPacket" parameterType="long">
-        select red_packet_id as id,user_id as userId,amount,send_date as sendDate,total,unit_amount as unitAmount,stock,version,note from red_packet where red_packet_id=#{id}
+        select red_packet_id as id,user_id as userId,amount,send_date as sendDate,total,unit_amount as unitAmount,stock,version,note
+        from red_packet
+        where red_packet_id=#{id}
     </select>
 
     <!-- 扣减红包库存 -->
     <update id="decreaseRedPacket" parameterType="long">
-        update red_packet set stock=stock-1 where red_packet_id=#{id}
+        update red_packet
+        set
+        stock=stock-1
+        where red_packet_id=#{id}
+
+    </update>
+    <!-- 乐观锁扣减红包库存 -->
+    <update id="decreaseRedPacketForVersion" parameterType="cn.leonyuan.pojo.RedPacket" >
+        update red_packet
+        set
+        stock=stock-1 ,
+        version=version+1
+        where red_packet_id=#{id}
+        and version=#{version}
     </update>
 </mapper>

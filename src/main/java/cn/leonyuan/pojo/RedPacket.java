@@ -34,7 +34,7 @@ public class RedPacket {
     /** 剩余红包个数 **/
     private Integer stock;
 
-    /** 版本号，默认0，可不设置**/
+    /** 版本号，默认0，解决乐观锁模式下ABA问题**/
     private Integer version;
 
     /**注释记录**/

@@ -19,4 +19,11 @@ public interface RedPacketMapper {
     * @return 更新记录的条数
     */
     public int decreaseRedPacket(Long id);
+
+    /**
+     * 乐观锁扣减红包库存
+     * @param id,version
+    * @return
+    */
+    public int decreaseRedPacketForVersion(RedPacket redPacket);
 }

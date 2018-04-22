@@ -3,9 +3,6 @@ package cn.leonyuan.controller;
 import cn.leonyuan.service.UserRedPacketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -22,15 +19,21 @@ public class UserRedPacketController {
     @Autowired
     private UserRedPacketService userRedPacketService=null;
 
+
     @RequestMapping("/hh")
     public String red(){
         return "index.jsp";
     }
+
+
     @RequestMapping("/test")
     public void grabRedPacket(){
 
-        userRedPacketService.updateUserRedPacket(1l,1l);
-
+        //userRedPacketService.updateUserRedPacket(1l,1l);
+        //乐观锁
+        //userRedPacketService.Optimistic_lock(1l,1l);
+        //可重入乐观锁
+        userRedPacketService.Reentrant_Optimistic_lock(1l,1l);
     }
 
 }
