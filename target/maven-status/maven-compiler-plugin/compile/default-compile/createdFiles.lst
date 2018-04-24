@@ -3,6 +3,7 @@ cn\leonyuan\config\WebConfig.class
 cn\leonyuan\service\RedPacketService.class
 cn\leonyuan\dao\RedPacketMapper.class
 cn\leonyuan\dao\UserRedPacketMapper.class
+cn\leonyuan\service\RedisRedPacketService.class
 cn\leonyuan\service\UserRedPacketService.class
 cn\leonyuan\controller\HomePageController.class
 cn\leonyuan\pojo\UserRedPacket.class
@@ -11,3 +12,4 @@ cn\leonyuan\service\impl\RedPacketServiceImpl.class
 cn\leonyuan\pojo\RedPacket.class
 cn\leonyuan\service\impl\UserRedPacketServiceImpl.class
 cn\leonyuan\controller\UserRedPacketController.class
+cn\leonyuan\service\impl\RedisRedPacketServiceImpl.class

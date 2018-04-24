@@ -33,7 +33,9 @@ public class UserRedPacketController {
         //乐观锁
         //userRedPacketService.Optimistic_lock(1l,1l);
         //可重入乐观锁
-        userRedPacketService.Reentrant_Optimistic_lock(1l,1l);
+       // userRedPacketService.Reentrant_Optimistic_lock(1l,1l);
+        //redis抢红包
+        userRedPacketService.grapRedPacketbyRedis(1l,1l);
     }
 
 }

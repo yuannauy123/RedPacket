@@ -60,6 +60,16 @@ public class WebConfig extends AsyncConfigurerSupport {
 		rmhd.getMessageConverters().add(jsonConverter);
 		return rmhd;
 	}
+
+	@Override
+	public Executor getAsyncExecutor() {
+		ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
+		taskExecutor.setCorePoolSize(5);
+		taskExecutor.setMaxPoolSize(10);
+		taskExecutor.setQueueCapacity(200);
+		taskExecutor.initialize();
+		return taskExecutor;
+	}
 	
 
 }
